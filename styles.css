@@ -195,6 +195,7 @@ nav.scrolled {
     text-align: center;
     background: linear-gradient(to right, #fff, var(--text-secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
     display: inline-block;
@@ -324,6 +325,7 @@ nav.scrolled {
     margin-bottom: 1rem;
     background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -795,6 +797,14 @@ footer {
 
 
 /* Responsive Design */
+.menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    z-index: 1001;
+}
+
 @media (max-width: 900px) {
     .grid-2 {
         grid-template-columns: 1fr;
@@ -803,18 +813,102 @@ footer {
     .contact-info-grid {
         grid-template-columns: 1fr;
     }
+
+    .container {
+        padding: 4rem 1.5rem;
+    }
+
+    .about-grid, .projects-list, .certifications-list {
+        gap: 2rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real app, add a hamburger menu */
+    .menu-btn {
+        display: block;
     }
-    
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(13, 14, 21, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        border-left: 1px solid var(--glass-border);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .name {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .title, .typed-text-container {
+        font-size: 1.2rem;
+    }
+
     .hero-buttons {
         flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        padding: 0;
+    }
+
+    .skill-tag {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .timeline-item::before {
+        left: -32px;
+        width: 12px;
+        height: 12px;
     }
     
-    .name {
-        font-size: 3rem;
+    .timeline {
+        padding-left: 1.5rem;
     }
 }

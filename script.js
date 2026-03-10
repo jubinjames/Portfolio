@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Navigation Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Close mobile menu when a link is clicked
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
     // Scroll Indicator & Sticky Navigation & Progress Bar
     const nav = document.querySelector('nav');
     const progressBar = document.getElementById('scroll-progress');
@@ -139,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // The library must be loaded via CDN in index.html first.
     if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".glass-card, .tool-card, .project-item"), {
-            max: 90,           // max tilt rotation (deg)
+            max: 10,           // max tilt rotation (deg)
             speed: 400,        // Speed of the enter/exit transition
             glare: true,       // if it should have a "glare" effect
             "max-glare": 0.2,  // the maximum "glare" opacity
