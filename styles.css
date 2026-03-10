@@ -52,16 +52,16 @@ h1, h2, h3, h4, .logo {
 .blob-1 {
     top: -10%;
     left: -10%;
-    width: 500px;
-    height: 500px;
+    width: min(500px, 80vw);
+    height: min(500px, 80vw);
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
 }
 
 .blob-2 {
     bottom: -20%;
     right: -10%;
-    width: 600px;
-    height: 600px;
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
     background: radial-gradient(circle, var(--secondary-glow) 0%, transparent 70%);
     animation-delay: -5s;
 }
@@ -69,8 +69,8 @@ h1, h2, h3, h4, .logo {
 .blob-3 {
     top: 40%;
     left: 40%;
-    width: 400px;
-    height: 400px;
+    width: min(400px, 70vw);
+    height: min(400px, 70vw);
     background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
     animation-duration: 25s;
 }
@@ -141,7 +141,7 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 clamp(1rem, 5vw, 2rem);
 }
 
 .logo {
@@ -190,7 +190,7 @@ nav.scrolled {
 
 /* Typography & Buttons */
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 3rem;
     text-align: center;
     background: linear-gradient(to right, #fff, var(--text-secondary));
@@ -273,7 +273,7 @@ nav.scrolled {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6rem 2rem;
+    padding: clamp(4rem, 10vw, 6rem) clamp(1rem, 5vw, 2rem);
 }
 
 .grid-2 {
@@ -284,7 +284,8 @@ nav.scrolled {
 
 /* Hero Section */
 #hero {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,7 +320,7 @@ nav.scrolled {
 }
 
 .name {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 10vw, 6rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -337,7 +338,7 @@ nav.scrolled {
 }
 
 .typed-text-container {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1rem, 4vw, 1.8rem);
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     min-height: 40px;
@@ -385,6 +386,7 @@ nav.scrolled {
 .social-links a {
     color: var(--text-secondary);
     font-size: 1.5rem;
+    padding: 0.5rem; /* Increase touch target area */
     transition: 0.3s;
 }
 
@@ -861,11 +863,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    .name {
-        font-size: clamp(2.5rem, 8vw, 4rem);
-    }
-
-    .title, .typed-text-container {
+    .title {
         font-size: 1.2rem;
     }
 
@@ -879,19 +877,12 @@ footer {
         width: 100%;
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
-
     .tools-grid {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
-    .name {
-        font-size: 2.2rem;
-    }
 
     .hero-buttons {
         padding: 0;
