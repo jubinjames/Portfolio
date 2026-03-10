@@ -136,6 +136,7 @@ nav.scrolled {
 }
 
 .nav-content {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -271,6 +272,7 @@ nav.scrolled {
 
 /* Structure */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: clamp(4rem, 10vw, 6rem) clamp(1rem, 5vw, 2rem);
@@ -295,8 +297,9 @@ nav.scrolled {
 }
 
 .hero-content {
+    width: 100%;
     max-width: 800px;
-    padding: 0 2rem;
+    padding: 0 clamp(1.5rem, 5vw, 2rem);
     z-index: 10;
     opacity: 0;
     transform: translateY(30px);
