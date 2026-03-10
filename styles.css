@@ -26,7 +26,11 @@ body {
     position: relative;
 }
 
-h1, h2, h3, h4, .logo {
+h1,
+h2,
+h3,
+h4,
+.logo {
     font-family: 'Outfit', sans-serif;
 }
 
@@ -76,14 +80,22 @@ h1, h2, h3, h4, .logo {
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(50px, 50px) scale(1.1); }
-    100% { transform: translate(-20px, 100px) scale(0.9); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-20px, 100px) scale(0.9);
+    }
 }
 
 /* Glassmorphism Classes with Realistic Depth */
 .glass-section {
-    background: radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, transparent 100%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
@@ -107,7 +119,7 @@ h1, h2, h3, h4, .logo {
 }
 
 /* This targets inner elements of the tilt card to make them float off the card */
-.glass-card > * {
+.glass-card>* {
     transform: translateZ(30px);
 }
 
@@ -361,8 +373,15 @@ nav.scrolled {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-desc {
@@ -389,7 +408,8 @@ nav.scrolled {
 .social-links a {
     color: var(--text-secondary);
     font-size: 1.5rem;
-    padding: 0.5rem; /* Increase touch target area */
+    padding: 0.5rem;
+    /* Increase touch target area */
     transition: 0.3s;
 }
 
@@ -426,8 +446,15 @@ nav.scrolled {
 }
 
 @keyframes scroll {
-    0% { top: 10px; opacity: 1; }
-    100% { top: 25px; opacity: 0; }
+    0% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 25px;
+        opacity: 0;
+    }
 }
 
 /* About Section */
@@ -603,7 +630,7 @@ nav.scrolled {
 }
 
 .tools-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 1.5rem;
 }
@@ -620,21 +647,24 @@ nav.scrolled {
     gap: 1rem;
     transition: all 0.4s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    
+
     /* 3D context */
     transform-style: preserve-3d;
     perspective: 800px;
 }
 
-.tool-card i, .tool-card span {
-    transform: translateZ(25px); /* Pops the icon and text off the card during tilt */
+.tool-card i,
+.tool-card span {
+    transform: translateZ(25px);
+    /* Pops the icon and text off the card during tilt */
 }
 
 .tool-card i {
     font-size: 2.5rem;
     color: var(--text-secondary);
     transition: 0.3s;
-    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5)); /* Realistic icon shadow */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
+    /* Realistic icon shadow */
 }
 
 .tool-card span {
@@ -653,7 +683,8 @@ nav.scrolled {
 }
 
 /* Projects & Certifications */
-.projects-list, .certifications-list {
+.projects-list,
+.certifications-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -673,7 +704,7 @@ nav.scrolled {
     transform-style: preserve-3d;
 }
 
-.project-item > * {
+.project-item>* {
     transform: translateZ(20px);
 }
 
@@ -770,11 +801,25 @@ footer {
 }
 
 /* Stagger Effects */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+.stagger-5 {
+    transition-delay: 0.5s;
+}
 
 /* Scroll Progress Bar */
 .scroll-progress {
@@ -814,7 +859,7 @@ footer {
     .grid-2 {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-info-grid {
         grid-template-columns: 1fr;
     }
@@ -823,7 +868,9 @@ footer {
         padding: 4rem 1.5rem;
     }
 
-    .about-grid, .projects-list, .certifications-list {
+    .about-grid,
+    .projects-list,
+    .certifications-list {
         gap: 2rem;
     }
 
@@ -901,7 +948,7 @@ footer {
         width: 12px;
         height: 12px;
     }
-    
+
     .timeline {
         padding-left: 1.5rem;
     }
