@@ -590,6 +590,7 @@ nav.scrolled {
 }
 
 .skill-title {
+    display: flex;
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
