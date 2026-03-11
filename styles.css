@@ -308,26 +308,6 @@ nav.scrolled {
     position: relative;
 }
 
-.profile-img-container {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 1.5rem auto;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-glow));
-    box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
-    position: relative;
-    z-index: 10;
-}
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--bg-color);
-}
-
 .hero-content {
     width: 100%;
     max-width: 800px;
@@ -901,11 +881,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .profile-img-container {
-        width: 150px;
-        height: 150px;
-    }
-
     .menu-btn {
         display: block;
     }
@@ -959,10 +934,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .profile-img-container {
-        width: 130px;
-        height: 130px;
-    }
 
     .hero-buttons {
         padding: 0;
