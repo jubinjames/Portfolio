@@ -901,6 +901,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .profile-img-container {
+        width: 150px;
+        height: 150px;
+    }
+
     .menu-btn {
         display: block;
     }
@@ -954,6 +959,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .profile-img-container {
+        width: 130px;
+        height: 130px;
+    }
 
     .hero-buttons {
         padding: 0;
